@@ -19,6 +19,7 @@
 15) `python -m pip3 install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu128` Important, because `cumm` will use it to detect cuda version.
 
 <h3>Cumm (keep the same console open, to maintain the environment vars you've already set earlier):</h3>
+
 1) cd into your repos folder, then the `cumm` repo folder.
 2) then `..\spconv\venv\Scripts\activate` to activate venv **of spconv**. We'll re-use it for cumm as well.
 5) `cd cumm`
@@ -32,6 +33,7 @@
 13) Optionally: `python setup.py bdist_wheel` This will create an optional wheel for `cumm` which you can give to someone if needed. Look for it in `dist` folder.
 
 <h3>spconv (keep the same console open):</h3>
+
 1) cd into your repos folder, then into the `spconv` repo folder
 2) `.\venv\Scripts\activate` to activate venv **of spconv**.
 4) `set CUMM_CUDA_VERSION=12.8`
@@ -42,8 +44,11 @@
 7) `set SPCONV_CUDA_ARCH_LIST=5.2;6.0;6.1;7.0;7.5;8.0;8.6;8.7;8.9;9.0` Just in case it's changed in future.
 8) `python setup.py bdist_wheel` This will create the wheel for `spconv` in the `dist` folder.
 
+.
 
-<h2>Original Rep description:<h1>
+.
+
+<h1>Original Rep description:</h1>
 
 -------------------------------------------------
 
