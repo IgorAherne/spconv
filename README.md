@@ -1,6 +1,6 @@
 <h2>How to install, for RTX 5000 gpus and above:</h2>
 
-you'll need to create 2 whl files: for cumm, for spconv
+<h3>you'll need to create 2 whl files: for cumm, for spconv</h3>
 
 1) Open `cmd` AS ADMINISTRATOR.
 2) Make sure you have visual studio 2022 installed.
@@ -18,7 +18,7 @@ you'll need to create 2 whl files: for cumm, for spconv
 14) `.\venv\Scripts\activate`
 15) `python -m pip3 install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu128` Important, because `cumm` will use it to detect cuda version.
 
-Cumm (keep the same console open, to maintain the environment vars you've already set earlier):
+<h3>Cumm (keep the same console open, to maintain the environment vars you've already set earlier):<h3>
 1) cd into your repos folder, then the `cumm` repo folder.
 2) then `..\spconv\venv\Scripts\activate` to activate venv **of spconv**. We'll re-use it for cumm as well.
 5) `cd cumm`
@@ -31,7 +31,7 @@ Cumm (keep the same console open, to maintain the environment vars you've alread
 12) `python -m pip3 install .` This should install `cumm` into the venv of spconv that we are currently using (step 2).
 13) Optionally: `python setup.py bdist_wheel` This will create an optional wheel for `cumm` which you can give to someone if needed. Look for it in `dist` folder.
 
-spconv (keep the same console open)
+<h3>spconv (keep the same console open):</h3>
 1) cd into your repos folder, then into the `spconv` repo folder
 2) `.\venv\Scripts\activate` to activate venv **of spconv**.
 4) `set CUMM_CUDA_VERSION=12.8`
