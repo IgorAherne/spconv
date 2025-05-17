@@ -18,7 +18,7 @@
 14) `.\venv\Scripts\activate`
 15) `python -m pip3 install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu128` Important, because `cumm` will use it to detect cuda version.
 
-<h3>Cumm (keep the same console open, to maintain the environment vars you've already set earlier):<h3>
+<h3>Cumm (keep the same console open, to maintain the environment vars you've already set earlier):</h3>
 1) cd into your repos folder, then the `cumm` repo folder.
 2) then `..\spconv\venv\Scripts\activate` to activate venv **of spconv**. We'll re-use it for cumm as well.
 5) `cd cumm`
