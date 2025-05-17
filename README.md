@@ -1,3 +1,44 @@
+<h2>How to install, for RTX 5000 gpus and above:</h2>
+
+you'll need to create 2 whl files: for cumm, for spconv
+
+1) Open `cmd` AS ADMINISTRATOR.
+2) Make sure you have visual studio 2022 installed.
+3) `call "C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Auxiliary\Build\vcvars64.bat"`
+4) `set CUDA_PATH=C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.8`
+5) `set CUDA_HOME=C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.8`
+6) `set PATH=%CUDA_PATH%\bin;%PATH%`
+7) Check if you have other toolkits, for example in the `C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\`. If yes, temporarily "hide" them, by changing folder name to `v11.8-a` or something like that.
+8) go to your repos folder
+9) `git clone https://github.com/FindDefinition/cumm.git`
+10) `git clone https://github.com/IgorAherne/spconv.git`
+11) `cd spconv`
+12) `python --version` ensure it is 3.11.9
+13) `python -m venv venv`
+14) `.\venv\Scripts\activate`
+15) `pip3 install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu128` Important, because `cumm` will use it to detect cuda version.
+
+Cumm (keep the same console open, to maintain the environment vars you've already set earlier):
+1) cd into your repos folder, then the `cumm` repo folder.
+2) then `..\spconv\venv\Scripts\activate` to activate venv **of spconv**. We'll re-use it for cumm as well.
+4) `git clone https://github.com/FindDefinition/cumm.git`
+5) `cd cumm`
+6) `git fetch --tags --force`
+7) `git tags` Notice that the spconv currently (May 2025) supports only up to 0.8, so we'll pick 0.7.13:
+8) `git checkout tags/v0.7.13`
+9) `set CUMM_DISABLE_JIT=1`
+10) `set CUMM_CUDA_VERSION=12.8`
+11) `set CUMM_CUDA_ARCH_LIST=5.2;6.0;6.1;7.0;7.5;8.0;8.6;8.7;8.9;9.0` **This specifies which GPUs will be supported. 9.0 is for RTX 5000**
+12) `pip install .` This should install `cumm` into the venv of spconv that we are currently using (step 2).
+
+spconv (keep the same console open)
+1) cd into your repos folder, then into the `spconv` repo folder
+
+
+<h2>Original Rep description:<h1>
+
+-------------------------------------------------
+
 <!--
  Copyright 2021 Yan Yan
  
